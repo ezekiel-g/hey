@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   root 'chatrooms#index'
   devise_for :users
 
-  resources :chatrooms do
-    resources :messages
-  end
+  resources :chatrooms
+  resources :messages
 
   namespace :api do
     namespace :v1 do

@@ -1,0 +1,11 @@
+<%- if current_user -%>
+  <h2><%= @chatroom.name %></h2>
+
+  <%- if @chatroom.messages.any? -%>
+    <%= render partial: 'messages/message', collection: @chatroom.messages %>
+  <%end%>
+
+  <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom} %>
+<%- else -%>
+  <p>Hey is a pretty basic messenging application. Please sign in or sign up to continue.</p>
+<%- end -%>
