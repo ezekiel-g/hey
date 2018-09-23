@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_09_23_201827) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.string "body", null: false
     t.bigint "user_id"
     t.bigint "chatroom_id"
     t.datetime "created_at", null: false
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_09_23_201827) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "username", null: false
+    t.string "role", default: "member", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
