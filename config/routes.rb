@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'chatrooms#index'
   devise_for :users
 
-  resources :chatrooms
+  resources :chatrooms, param: :id
   resources :messages
 
   namespace :api do
@@ -12,4 +12,6 @@ Rails.application.routes.draw do
       resources :messages
     end
   end
+
+  mount ActionCable.server => '/cable'
 end
