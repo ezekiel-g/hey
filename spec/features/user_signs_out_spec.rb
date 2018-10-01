@@ -12,9 +12,10 @@ feature 'user signs out', %Q{
 
   scenario 'authenticated user signs out' do
     user = User.create(
-      username: 'John',
+      id: 97,
+      username: 'John_the_Member',
       password: 'password',
-      email: 'john@gmail.com'
+      email: 'john_the_member@gmail.com'
     )
 
     visit new_user_session_path
