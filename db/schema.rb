@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_09_23_201827) do
     t.datetime "remember_created_at"
     t.string "username", null: false
     t.string "role", default: "member", null: false
+    t.string "profile_photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
