@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-feature 'admin makes group', %Q{
+feature 'admin makes chatroom', %Q{
   As an admin
-  I want to create a group
+  I want to create a chatroom
   So that others can use it
 } do
-  scenario 'admin signs in and makes group' do
+  scenario 'admin signs in and makes chatroom' do
     user = User.create(
       username: 'Tim',
       password: 'password',
@@ -29,9 +29,9 @@ feature 'admin makes group', %Q{
 
     fill_in 'Name:', with: sample_name
 
-    click_button 'Create chatroom'
+    click_button 'Create'
 
     expect(page).to have_content('Chatroom created successfully')
-    expect(page).to have_content(sample_name.upcase)
+    expect(page).to have_content(sample_name)
   end
 end
