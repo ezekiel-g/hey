@@ -1,11 +1,15 @@
-<%- if current_user -%>
-  <h2><%= @chatroom.name.upcase %></h2>
+<div class='left_right_margin'>
+  <%- if current_user -%>
+    <h2><%= @chatroom.name.upcase %></h2>
 
-  <%- if @chatroom.messages.any? -%>
-    <%= render partial: 'messages/message', collection: @chatroom.messages %>
-  <%end%>
+    <%- if @chatroom.messages.any? -%>
+      <div class='black_ring'>
+        <%= render partial: 'messages/message', collection: @chatroom.messages %>
+      </div>
+    <%end%>
 
-  <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom} %>
-<%- else -%>
-  <p>Hey is a pretty basic messenging application. Please sign in or sign up to continue.</p>
-<%- end -%>
+    <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom} %>
+  <%- else -%>
+    <p>Hey is a pretty basic messenging application. Please sign in or sign up to continue.</p>
+  <%- end -%>
+</div>

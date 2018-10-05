@@ -1,13 +1,15 @@
-<%- if current_user -%>
-  <h2>CHATROOMS</h2>
+<div class='left_right_margin'>
+  <%- if current_user -%>
+    <h2>CHATROOMS</h2>
 
-  <%- @chatrooms.each do |chatroom| -%>
-    <%= link_to chatroom.name, chatroom_path(chatroom) %></br>
-  <%- end -%><br/>
+    <%- @chatrooms.each do |chatroom| -%>
+      <%= link_to chatroom.name, chatroom_path(chatroom) %></br>
+    <%- end -%><br/>
 
-  <%- if current_user.admin? -%>
-    <%= link_to 'Create chatroom', new_chatroom_path %>
+    <%- if current_user.admin? -%>
+      <%= link_to 'Create chatroom', new_chatroom_path %>
+    <%- end -%>
+  <%- else -%>
+    <p>This is a pretty basic messenging application. Please sign in or sign up.</p>
   <%- end -%>
-<%- else -%>
-  <p>This is a pretty basic messenging application. Please sign in or sign up.</p>
-<%- end -%>
+<div>
