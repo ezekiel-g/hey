@@ -1,16 +1,18 @@
-<%- if current_user.admin? %>
-  <h2>CREATE GROUP</h2>
+<div class='left_right_margin'>
+  <%- if current_user.admin? %>
+    <h2>CREATE CHATROOM</h2>
 
-  <%= form_for(@chatroom) do |f| %>
-    <div>
-      <%= f.label :name, 'Name:' %></br>
-      <%= f.text_field :name %>
-    </div>
+    <%= form_for(@chatroom) do |f| %>
+      <div class='field'>
+        <%= f.label :name, 'Name:' %></br>
+        <%= f.text_field :name %>
+      </div>
 
-    <div>
-      <%= f.submit 'Create chatroom' %>
-    </div>
+      <div class='field'>
+        <%= f.submit 'Create chatroom' %>
+      </div>
+    <%- end -%>
+  <%- else -%>
+    redirect_to root_path
   <%- end -%>
-<%- else -%>
-  redirect_to root_path
-<%- end -%>
+</div>
