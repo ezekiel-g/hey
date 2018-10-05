@@ -24,6 +24,21 @@ class ChatroomsController < ApplicationController
     end
   end
 
+  def edit
+    @chatroom = Chatroom.find(params[:id])
+  end
+
+  def update
+    @chatroom = Chatroom.find(params[:id])
+
+    if @chatroom.update_attributes(chatroom_params)
+      flash[:notice] = 'Chatroom edited successfully'
+      redirect_to root_path
+    else
+      flash.now[:notice] = @chatroom.errors.full_messages.join(' * ')
+    end
+  end
+
   def destroy
     @chatroom = Chatroom.find(params[:id])
     @chatroom.destroy

@@ -1,0 +1,18 @@
+<div class='left_right_margin'>
+  <%- if current_user.admin? -%>
+    <h2>EDIT <%= @chatroom.name.upcase %></h2>
+
+    <%= form_for(@chatroom) do |f| %>
+      <div class='field'>
+        <%= f.label :name, 'Name:' %></br>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class='field'>
+        <%= f.submit 'Edit' %>
+      </div>
+    <%- end -%>
+  <%- else -%>
+    redirect_to root_path
+  <%- end -%>
+<div>
