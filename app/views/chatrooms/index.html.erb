@@ -1,8 +1,12 @@
 <%- if current_user -%>
-  <h2>Chatrooms</h2>
+  <h2>CHATROOMS</h2>
 
   <%- @chatrooms.each do |chatroom| -%>
-    <%= link_to chatroom.name, chatroom_path(chatroom) %>
+    <%= link_to chatroom.name, chatroom_path(chatroom) %></br>
+  <%- end -%><br/>
+
+  <%- if current_user.admin? -%>
+    <%= link_to 'Create chatroom', new_chatroom_path %>
   <%- end -%>
 <%- else -%>
   <p>This is a pretty basic messenging application. Please sign in or sign up.</p>

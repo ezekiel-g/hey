@@ -13,9 +13,9 @@ RSpec.describe Message, type: :model do
     name: "A Sample Group"
   )
 
-  let(:message) { Message.new(
+  let(:message) { Message.create(
     id: 100,
-    body: "hello",
+    body: 'hello',
     user: user,
     chatroom: chatroom
   ) }
