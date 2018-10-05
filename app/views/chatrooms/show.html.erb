@@ -11,6 +11,7 @@
     <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom} %></br>
 
     <%- if current_user.admin? -%>
+      <%= link_to 'Edit this chatroom', edit_chatroom_path(@chatroom) %></br>
       <%= link_to 'Delete this chatroom', chatroom_path(@chatroom),
         method: :delete,
         data: { confirm: 'Are you sure?' } %>
