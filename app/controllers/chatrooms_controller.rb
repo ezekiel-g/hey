@@ -17,11 +17,18 @@ class ChatroomsController < ApplicationController
 
     if @chatroom.save
       flash[:notice] = 'Chatroom created successfully'
-      redirect_to chatroom_path(@chatroom)
+      redirect_to root_path
     else
       flash.now[:notice] = @chatroom.errors.full_messages.join(' * ')
       render :new
     end
+  end
+
+  def destroy
+    @chatroom = Chatroom.find(params[:id])
+    @chatroom.destroy
+
+    redirect_to root_path
   end
 
   private
