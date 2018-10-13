@@ -8,25 +8,30 @@
       <%= f.label :username, 'Username:' %></br>
       <%= f.text_field :username, autofocus: true %>
 
-    <div class="field">
+    <div class='field'>
       <%= f.label :email, 'Email:' %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
     </div>
 
-    <div class="field">
+    <div class='field'>
+      <%= f.label :profile_photo, 'Profile photo (optional):' %>
+      <%= f.file_field :profile_photo %>
+    </div>
+
+    <div class='field'>
       <%= f.label :password, 'Password:' %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.password_field :password, autocomplete: 'new-password' %>
     </div>
 
-    <div class="field">
+    <div class='field'>
       <%= f.label :password_confirmation, 'Password confirmation:' %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, autocomplete: 'new-password' %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up" %>
+    <div class='actions'>
+      <%= f.submit 'Sign up' %>
     </div>
-  <% end %>
+  <% end %><br/>
 
-  <%= render "devise/shared/links" %>
+  <%= render 'devise/shared/links' %>
 </div>
