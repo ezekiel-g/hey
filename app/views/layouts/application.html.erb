@@ -36,13 +36,17 @@
     </div>
   </div>
 
-  <%- flash.each do |key, value| -%>
-    <div class='flash flash-<%= key %>'>
-      <%= value %>
-    </div>
-  <%- end -%>
+  <div class='flash-messages' id='flash-messages'>
+    <%- flash.each do |key, value| -%>
+      <div class='flash flash-<%= key %>'>
+        <%= value %>
+      </div>
+    <%- end -%>
+  </div>
 
-  <%= yield %>
+  <div>
+    <%= yield %>
+  </div>
 
   <%= javascript_include_tag 'application' %>
 
