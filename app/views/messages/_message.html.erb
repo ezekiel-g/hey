@@ -1,3 +1,5 @@
-<img class='profile-photo' src=<%= message.user.profile_photo %> />
-<strong><%= message.user.username %>: </strong>
-<%=message.body %></br>
+<span class='profile-photo-container'>
+  <img class='profile-photo' src=<%= message.user.profile_photo %> />
+</span>
+  <strong><%= message.user.username %>: </strong>
+  <%= message.body %></br>

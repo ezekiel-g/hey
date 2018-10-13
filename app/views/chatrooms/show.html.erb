@@ -1,9 +1,10 @@
-<div class='left_right_margin'>
+<div class='left-right-margin'>
   <%- if current_user -%>
     <h2><%= @chatroom.name.upcase %></h2>
+    <p class='center'>Welcome, <%= current_user.username %></p>
 
     <%- if @chatroom.messages.any? -%>
-      <div class='black_ring'>
+      <div class='black-ring'>
         <%= render partial: 'messages/message', collection: @chatroom.messages %>
       </div>
     <%end%>
