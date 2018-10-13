@@ -2,6 +2,10 @@ h2 {
   text-align: center;
 }
 
+li {
+  list-style-type: none;
+}
+
 .field {
 
 }
@@ -44,4 +48,18 @@ h2 {
 
 .center {
   text-align: center;
+}
+
+.flash-messages {
+  text-align: center;
+  font-style: italic;
+  opacity: 0.65;
+  font-size: 85%;
+}
+
+.devise-messages {
+  text-align: center;
+  font-style: italic;
+  opacity: 0.65;
+  font-size: 85%;
 }

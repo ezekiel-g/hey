@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { render } from 'react-dom'
 
@@ -21,3 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 })
+
+let flashMessage = document.getElementById('flash-messages')
+
+setTimeout(() => {
+  flashMessage.remove()
+}, 3000)
