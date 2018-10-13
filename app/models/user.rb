@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :messages
   has_many :chatrooms, through: :messages
 
+  mount_uploader :profile_photo, ProfilePhotoUploader
+
   def admin?
     role == 'admin'
   end
