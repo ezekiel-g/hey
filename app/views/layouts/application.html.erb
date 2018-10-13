@@ -2,27 +2,27 @@
 <html>
 <head>
   <title>Hey</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
-    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag 'vendor/modernizr' %>
 
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
 </head>
 <body>
 
-  <div class='black_underscore'>
-    <div class='left_right_margin'>
-      <nav class="top-bar">
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="/">HEY</a></h1>
+  <div class='black-underscore'>
+    <div class='left-right-margin'>
+      <nav class='top-bar'>
+        <ul class='title-area'>
+          <li class='name'>
+            <h1><a href='/'>HEY</a></h1>
           </li>
         </ul>
 
-        <section class="top-bar-section">
-          <ul class="right">
+        <section class='top-bar-section'>
+          <ul class='right'>
             <%- if current_user -%>
               <li><%= link_to 'Edit profile', edit_user_registration_path %>
               <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
@@ -37,7 +37,7 @@
   </div>
 
   <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
+    <div class='flash flash-<%= key %>'>
       <%= value %>
     </div>
   <%- end -%>

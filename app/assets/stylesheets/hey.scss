@@ -6,27 +6,42 @@ h2 {
 
 }
 
-.left_right_margin {
+.left-right-margin {
   margin-left: 4rem;
   margin-right: 4rem;
 }
 
-.black_ring {
+.black-ring {
   border: 1px solid #000000;
   border-radius: 15px;
   padding: 1rem;
 }
 
-.white_background {
+.white-background {
   color: #000000;
   background-color: #FFFFFF;
 }
 
-.black_underscore {
+.black-underscore {
   border-bottom: 1px solid #000000;
 }
 
 .profile-photo {
   max-width: 2rem;
   max-height: 2rem;
+}
+
+.profile-photo-container {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.profile-photo-bigger {
+  max-width: 4rem;
+  max-height: 4rem;
+}
+
+.center {
+  text-align: center;
 }
