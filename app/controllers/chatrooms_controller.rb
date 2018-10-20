@@ -26,6 +26,11 @@ class ChatroomsController < ApplicationController
 
   def edit
     @chatroom = Chatroom.find(params[:id])
+
+    if current_user.id != @chatroom.owner_id
+      flash[:notice] = 'You are only allowed to edit your own chatrooms.'
+      redirect_to chatroom_path
+    end
   end
 
   def update

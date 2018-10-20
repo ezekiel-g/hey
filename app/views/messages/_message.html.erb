@@ -1,7 +1,9 @@
 <div class='chat-message'>
-  <div class='profile-photo-container profile-photo-small'>
-    <img class='profile-photo' src=<%= message.user.profile_photo %> />
-  </div>
+  <%- if message.user.profile_photo -%>
+    <div class='profile-photo-container profile-photo-small'>
+      <img class='profile-photo' src=<%= message.user.profile_photo %> />
+    </div>
+  <%- end -%>
 
   <strong><%= message.user.username %> (<%=message.created_at.strftime('%l:%M %p') %> on <%= message.created_at.strftime('%b %d, %G') %>): </strong>
   <span class='message-body'>

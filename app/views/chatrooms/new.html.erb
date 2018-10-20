@@ -1,5 +1,5 @@
 <div class='left-right-margin'>
-  <%- if current_user.admin? %>
+  <%- if current_user %>
     <h2>CREATE CHATROOM</h2>
 
     <%= form_for(@chatroom) do |f| %>

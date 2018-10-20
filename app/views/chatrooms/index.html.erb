@@ -6,9 +6,7 @@
       <%= link_to chatroom.name, chatroom_path(chatroom) %></br>
     <%- end -%><br/>
 
-    <%- if current_user.admin? -%>
-      <%= link_to 'Create chatroom', new_chatroom_path %>
-    <%- end -%>
+    <%= link_to 'Create chatroom', new_chatroom_path %>
   <%- else -%>
     <p>This is a pretty basic messenging application. Please sign in or sign up.</p>
   <%- end -%>

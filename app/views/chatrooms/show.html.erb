@@ -11,13 +11,16 @@
 
     <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom} %></br>
 
-    <%- if current_user.admin? -%>
+    <%- if current_user.id == @chatroom.owner_id -%>
       <%= link_to 'Edit this chatroom', edit_chatroom_path(@chatroom) %></br>
+    <%- end -%>
+
+    <%- if current_user.id == @chatroom.owner_id || current_user.admin? -%>
       <%= link_to 'Delete this chatroom', chatroom_path(@chatroom),
         method: :delete,
         data: { confirm: 'Are you sure?' } %>
     <%- end -%>
   <%- else -%>
-    <p>Hey is a pretty basic messenging application. Please sign in or sign up to continue.</p>
+    <p>This is a pretty basic messenging application. Please sign in or sign up to continue.</p>
   <%- end -%>
 </div>
