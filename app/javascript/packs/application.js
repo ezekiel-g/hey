@@ -25,4 +25,4 @@ let flashMessage = document.getElementById('flash-messages')
 
 setTimeout(() => {
   flashMessage.remove()
-}, 3000)
+}, 4000)

@@ -43,12 +43,13 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @chatroom.destroy
 
+    flash[:notice] = 'Chatroom deleted'
     redirect_to root_path
   end
 
   private
 
   def chatroom_params
-    params.require(:chatroom).permit(:name)
+    params.require(:chatroom).permit(:name, :owner_id)
   end
 end
