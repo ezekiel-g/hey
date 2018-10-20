@@ -16,6 +16,7 @@ li {
 }
 
 .black-ring {
+  word-wrap: break-word;
   border: 1px solid #000000;
   border-radius: 15px;
   padding: 1rem;
@@ -44,8 +45,8 @@ li {
 }
 
 .profile-photo-container.profile-photo-small {
-  width: 2rem;
-  height: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
   float: left;
 }
 
@@ -68,7 +69,11 @@ li {
 }
 
 .chat-message {
-  height: 2.3rem;
+  min-height: 2.3rem;
+}
+
+.message-body {
+
 }
 
 ::-webkit-scrollbar {
