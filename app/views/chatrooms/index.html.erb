@@ -1,9 +1,11 @@
 <div class='left-right-margin'>
   <%- if current_user -%>
-    <h2>CHATROOMS</h2>
+    <h2>YOUR CHATROOMS</h2>
 
     <%- @chatrooms.each do |chatroom| -%>
-      <%= link_to chatroom.name, chatroom_path(chatroom) %></br>
+      <%- if chatroom.member_names.include?(current_user.username) || current_user.admin? -%>
+        <%= link_to chatroom.name, chatroom_path(chatroom) %></br>
+      <%- end -%>
     <%- end -%><br/>
 
     <%= link_to 'Create chatroom', new_chatroom_path %>

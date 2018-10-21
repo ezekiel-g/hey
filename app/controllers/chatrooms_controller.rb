@@ -16,6 +16,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new(chatroom_params)
 
     if @chatroom.save
+      Membership.create!(user_id: current_user.id, chatroom_id: @chatroom.id)
       flash[:notice] = 'Chatroom created successfully'
       redirect_to root_path
     else
@@ -47,6 +48,7 @@ class ChatroomsController < ApplicationController
   def destroy
     @chatroom = Chatroom.find(params[:id])
     @chatroom.destroy
+    @chatroom.memberships.destroy
 
     flash[:notice] = 'Chatroom deleted'
     redirect_to root_path
