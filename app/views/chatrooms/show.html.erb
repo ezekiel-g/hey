@@ -12,6 +12,7 @@
     <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom} %></br>
 
     <%- if current_user.id == @chatroom.owner_id -%>
+      <%= link_to 'Invite people', new_chatroom_membership_path(@chatroom) %><br/>
       <%= link_to 'Edit this chatroom', edit_chatroom_path(@chatroom) %></br>
     <%- end -%>
 
