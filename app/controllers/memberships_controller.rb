@@ -1,5 +1,6 @@
 class MembershipsController < ApplicationController
   def new
+    @users = User.all
     @chatroom = Chatroom.find(params[:chatroom_id])
     @membership = Membership.new
   end
