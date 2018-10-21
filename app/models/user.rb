@@ -7,7 +7,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :messages
-  has_many :chatrooms, through: :messages
+  has_many :memberships
+  has_many :chatrooms, through: :memberships
 
   mount_uploader :profile_photo, ProfilePhotoUploader
 
