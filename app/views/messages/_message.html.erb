@@ -5,8 +5,15 @@
     </div>
   <%- end -%>
 
-  <strong><%= message.user.username %> (<%=message.created_at.strftime('%l:%M %p') %> on <%= message.created_at.strftime('%b %d, %G') %>): </strong>
-  <span class='message-body'>
-    <%= message.body %>
-  </span></br>
+  <strong><%= message.user.username %> </strong> (<%=message.created_at.strftime('%l:%M%p') %> on <%= message.created_at.strftime('%b %d, %G') %>):
+
+  <%- if message.user_id == current_user.id -%>
+    <span class='red-text'>
+      <%= message.body %>
+    </span><br/>
+  <%- else -%>
+    <span class='blue-text'>
+      <%= message.body %>
+    </span><br/>
+  <%- end -%>
 </div>

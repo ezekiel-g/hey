@@ -4,12 +4,12 @@
     <h6 class='center'>Welcome, <%= current_user.username %></h6>
 
     <%- if @chatroom.messages.any? -%>
-      <div class='black-ring'>
-        <%= render partial: 'messages/message', collection: @chatroom.messages %>
+      <div class='black-ring' id='black-ring'>
+        <%= render partial: 'messages/message', collection: @chatroom.messages.reverse %>
       </div>
     <%end%>
 
-    <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom} %></br>
+    <%= render partial: 'messages/message_form', locals: { message: @message, chatroom: @chatroom } %></br>
 
     <%- if current_user.id == @chatroom.owner_id -%>
       <%= link_to 'Invite people', new_chatroom_membership_path(@chatroom) %><br/>
